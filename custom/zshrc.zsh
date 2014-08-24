@@ -1,25 +1,9 @@
-fpath=(/usr/local/share/zsh-completions $fpath)
-
-# colordiff
-if [[ -x `which colordiff` ]]; then
-  alias diff='colordiff -u'
-  alias less='less -R'
-else
-  alias diff='diff -u'
-fi
-
-
 #zshrc
 ########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
 
-# path
-export PATH=/usr/local/bin:$PATH
-export MANPATH=/opt/local/man:$MANPATH
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-#export DISPLAY=:0
-
+# http://yonchu.hatenablog.com/entry/20120415/1334506855
 #   typeset
 #    -U 重複パスを登録しない
 #    -x exportも同時に行う
@@ -33,6 +17,7 @@ export MANPATH=/opt/local/man:$MANPATH
 #        -: シンボリックリンク先のパスを評価
 #        /: ディレクトリのみ残す
 #        .: 通常のファイルのみ残す
+
 ## 重複パスを登録しない
 typeset -U path cdpath fpath manpath
 
@@ -43,6 +28,18 @@ sudo_path=({/usr/local,/usr,}/sbin(N-/))
 
 ## pathを設定
 path=(~/bin(N-/) /usr/local/bin(N-/) ${path})
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
+export MANPATH=/opt/local/man:$MANPATH
+
+# colordiff
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff -u'
+  alias less='less -R'
+else
+  alias diff='diff -u'
+fi
 
 # 色を使用出来るようにする
 autoload -Uz colors
