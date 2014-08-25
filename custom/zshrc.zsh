@@ -30,7 +30,7 @@ sudo_path=({/usr/local,/usr,}/sbin(N-/))
 path=(~/bin(N-/) /usr/local/bin(N-/) ${path})
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
+export PATH=/bin:/usr/bin:/usr/local/bin:$HOME/.nodebrew/current/bin:${PATH}
 export MANPATH=/opt/local/man:$MANPATH
 
 # colordiff
