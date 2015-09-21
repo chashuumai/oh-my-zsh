@@ -30,7 +30,7 @@ sudo_path=({/usr/local,/usr,}/sbin(N-/))
 path=(~/bin(N-/) /usr/local/bin(N-/) ${path})
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-export PATH=/bin:/usr/bin:/usr/local/bin:$HOME/.nodebrew/current/bin:${PATH}
+export PATH=/usr/local/bin:/usr/bin:/bin:$HOME/.nodebrew/current/bin:${PATH}
 export MANPATH=/opt/local/man:$MANPATH
 
 # colordiff
@@ -196,6 +196,8 @@ alias sudo='sudo '
 # グローバルエイリアス
 alias -g L='| less'
 alias -g G='| grep'
+
+alias vi='/usr/local/bin/vim'
  
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
